@@ -38,3 +38,12 @@ if [[ $1 -eq 8 ]]; then
 EOF
 ) | python3 ./A08.py
 fi
+
+if [[ $1 -eq 9 ]]; then
+    (cat <<EOF
+5 5 2
+1 3 5 5
+2 2 4 4
+EOF
+) | python3 ./A09.py
+fi
