@@ -1,20 +1,26 @@
 n, x = map(int, input().split())
 a = list(map(int, input().split()))
 
-def b(low, high):
-    if low > high:
-        return -1
-    mid = (low + high) // 2
-    if a[mid] == x:
-        return mid + 1
-    elif a[mid] < x:
-        return b(mid + 1, high)
-    else:
-        return b(low, mid - 1)
+# def b(low, high):
+#     if low > high:
+#         return -1
+#     mid = (low + high) // 2
+#     if a[mid] == x:
+#         return mid + 1
+#     elif a[mid] < x:
+#         return b(mid + 1, high)
+#     else:
+#         return b(low, mid - 1)
 
-print(b(0, n - 1))
+# print(b(0, n - 1))
+
+#----------------------------------
+# import bisect
+
+# print(bisect.bisect_left(a, x) + 1)
 
 
+#----------------------------------
 # import sys
 
 # input = sys.stdin.read
