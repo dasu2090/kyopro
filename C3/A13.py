@@ -1,20 +1,26 @@
-def count_pairs(N, K, A):
-    left = 0
-    count = 0
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
 
-    for right in range(N):
-        # 左端が条件を満たすように調整
-        while A[right] - A[left] > K:
-            left += 1
-        # rightとleftの間のペアの数をカウント
-        print(left+1, right+1)
-        count += (right - left)
+count = 0
+j = 0
 
-    return count
+for i in range(n):
+    while j < n and a[j] - a[i] <= k:
+        j += 1
+    print(j, i, j - i - 1)
+    count += j - i - 1
+print(count)
 
-# 入力例
-N, K = map(int, input().split())
-A = list(map(int, input().split()))
 
-# 結果を出力
-print(count_pairs(N, K, A))
+# N, K = map(int, input().split())
+# A = list(map(int, input().split()))
+# left = 0
+# count = 0
+
+# for right in range(N):
+#     while A[right] - A[left] > K:
+#         left += 1
+#     print(left+1, right+1)
+#     count += (right - left)
+
+# print(count)
