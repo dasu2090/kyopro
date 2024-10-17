@@ -1,33 +1,50 @@
-def solve(N, K, A, B, C, D):
-    AB_sums = []
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+c = list(map(int, input().split()))
+d = list(map(int, input().split()))
 
-    # AとBの全てのペアの和を記録
-    for i in range(N):
-        for j in range(N):
-            AB_sums.append(A[i] + B[j])
+p = [a[i] + b[j] for i in range(n) for j in range(n)]
+q = [c[i] + d[j] for i in range(n) for j in range(n)]
 
-    # AB_sumsをソートしておく
-    AB_sums.sort()
+q.sort()
 
-    # CとDの全てのペアの和を計算し、K - CD_sumがAB_sumsにあるかを探す
-    for i in range(N):
-        for j in range(N):
-            CD_sum = C[i] + D[j]
-            target = K - CD_sum
-            
-            # 二分探索でtargetがAB_sumsにあるかを確認
-            import bisect
-            if bisect.bisect_left(AB_sums, target) < len(AB_sums) and AB_sums[bisect.bisect_left(AB_sums, target)] == target:
-                return "Yes"
-    
+def binary(arr, target, left, right):
+    if left >= right:
+        return False
+    mid = (left + right) // 2
+    if arr[mid] == target:
+        return True
+    if arr[mid] < target:
+        return binary(arr, target, mid + 1, right)
+    if arr[mid] > target:
+        return binary(arr, target, left, mid)
+
+def f():
+    for x in p:
+        if binary(q, k - x, 0, len(p) - 1):
+            return "Yes"
     return "No"
 
-# 入力の取得
-N, K = map(int, input().split())
-A = list(map(int, input().split()))
-B = list(map(int, input().split()))
-C = list(map(int, input().split()))
-D = list(map(int, input().split()))
+print(f())
 
-# 結果を出力
-print(solve(N, K, A, B, C, D))
+
+#--------------------------
+#n, k = map(int, input().split())
+#a = list(map(int, input().split()))
+#b = list(map(int, input().split()))
+#c = list(map(int, input().split()))
+#d = list(map(int, input().split()))
+
+#p = [a[i] + b[j] for i in range(n) for j in range(n)]
+#q = [c[i] + d[j] for i in range(n) for j in range(n)]
+
+#def f():
+#    for i in range(n*n):
+#        for j in range(n*n):
+#            if k - p[i] == q[j]:
+#                return "Yes"
+#    return "No"
+
+#print(f())
+
