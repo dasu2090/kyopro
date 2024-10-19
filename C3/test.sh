@@ -6,12 +6,13 @@ if [[ $1 -eq 11 ]]; then
 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67
 EOF
 ) | python3 ./A11.py
-echo ""
+echo "correct:11"
     (cat <<EOF
 10 80
 10 20 30 40 50 60 70 80 90 100
 EOF
 ) | python3 ./A11.py
+echo "correct:8"
 fi
 
 if [[ $1 -eq 12 ]]; then

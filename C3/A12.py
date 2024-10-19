@@ -1,18 +1,43 @@
 n, k = map(int, input().split())
 a = list(map(int, input().split()))
 
-def b(l, r):
-    if l >= r:
-        return r
-    sum = 0
-    m = (l + r) // 2
+def c(m):
+    ans = 0
     for i in range(n):
-        sum += m // a[i]
-        if sum >= k:
-            return b(l, m)
-    return b(m+1, r)
+        ans += m // a[i]
+    return ans
 
-print(b(1, 10**9))
+def f(l, r):
+    if l >= r:
+        return l
+    mid = (l + r) // 2
+    ans = c(mid)
+    if ans > k:
+        return f(l, mid)
+    elif ans < k:
+        return f(mid + 1, r)
+    else:
+        return mid
+
+print(f(0, 10**9-1))
+
+#----------------------
+
+# n, k = map(int, input().split())
+# a = list(map(int, input().split()))
+
+# def b(l, r):
+#     if l >= r:
+#         return r
+#     sum = 0
+#     m = (l + r) // 2
+#     for i in range(n):
+#         sum += m // a[i]
+#         if sum >= k:
+#             return b(l, m)
+#     return b(m+1, r)
+
+# print(b(1, 10**9))
 
 
 #------------------------
