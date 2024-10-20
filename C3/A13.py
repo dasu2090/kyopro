@@ -1,17 +1,31 @@
 n, k = map(int, input().split())
 a = list(map(int, input().split()))
 
-count = 0
+c = 0
 j = 0
-
 for i in range(n):
     while j < n and a[j] - a[i] <= k:
         j += 1
-    print(j, i, j - i - 1)
-    count += j - i - 1
-print(count)
+    print(i+1, j)
+    c += j - i - 1
+print(c)
 
 
+#--------------------------------
+# n, k = map(int, input().split())
+# a = list(map(int, input().split()))
+
+# count = 0
+# j = 0
+
+# for i in range(n):
+#     while j < n and a[j] - a[i] <= k:
+#         j += 1
+#     print(j, i, j - i - 1)
+#     count += j - i - 1
+# print(count)
+
+#--------------------------------
 # N, K = map(int, input().split())
 # A = list(map(int, input().split()))
 # left = 0
