@@ -47,3 +47,14 @@ if [[ $1 -eq 9 ]]; then
 EOF
 ) | python3 ./A09.py
 fi
+
+if [[ $1 -eq 10 ]]; then
+    (cat <<EOF
+7
+1 2 5 5 2 3 1
+2
+3 5
+4 6
+EOF
+) | python3 ./A10.py
+fi
