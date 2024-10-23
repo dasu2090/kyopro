@@ -14,11 +14,23 @@ for i in range(n):
     for j in range(n):
         q[i*n+j] = c[i] + d[j]
 
+q.sort()
+def b(ans, l, r):
+    if l >= r:
+        return False
+    mid = (l + r) // 2
+    if q[mid] == ans:
+        return True
+    if q[mid] < ans:
+        return b(ans, mid+1, r)
+    if q[mid] > ans:
+        return b(ans, l, mid)
+
 def f():
     for i in range(n*n):
-        for j in range(n*n):
-            if k - p[i] == q[j]:
-                return "Yes"
+        ans = k - p[i]
+        if b(ans, 0, n*n-1):
+            return "Yes"
     return "No"
 
 print(f())
