@@ -51,7 +51,7 @@ fi
 if [[ $1 -eq 15 ]]; then
     (cat <<EOF
 5
-45 80 11 77 46
+46 80 11 77 46
 EOF
 ) | python3 ./A15.py
 fi
