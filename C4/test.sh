@@ -17,4 +17,10 @@ if [[ $1 -eq 17 ]]; then
 5 3 7
 EOF
 ) | python3 ./A17.py
+    (cat <<EOF
+10
+1 19 75 37 17 16 33 18 22
+41 28 89 74 98 43 42 31
+EOF
+) | python3 ./A17.py
 fi
