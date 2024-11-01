@@ -24,3 +24,11 @@ EOF
 EOF
 ) | python3 ./A17.py
 fi
+
+if [[ $1 -eq 18 ]]; then
+    (cat <<EOF
+3 7
+2 2 3
+EOF
+)| python3 ./A18.py
+fi
