@@ -1,49 +1,33 @@
 n, s = map(int, input().split())
 a = list(map(int, input().split()))
 
-c = 0
-def f():
-    for i in range(1 << n):
-        c = 0
-        for j in range(n):
-            if i & (1 << j):
-                c += a[j]
-        if c == s:
-            return "Yes"
+dp = [[False] * (s + 1) for _ in range(n + 1)]
+dp[0][0] = True
+
+for i in range(1, n + 1):
+    for j in range(s + 1):
+        if j < a[i - 1]:
+            dp[i][j] = dp[i - 1][j]
+        else:
+            dp[i][j] = dp[i - 1][j] or dp[i - 1][j - a[i - 1]]
+
+if dp[n][s]:
+    print("Yes")
+else:
     print("No")
-print(f())
 
-#----------------------------
-# def solve(N, K, A, B, C, D):
-#     AB_sums = []
+#---------------------
+# n, s = map(int, input().split())
+# a = list(map(int, input().split()))
 
-#     # AとBの全てのペアの和を記録
-#     for i in range(N):
-#         for j in range(N):
-#             AB_sums.append(A[i] + B[j])
-
-#     # AB_sumsをソートしておく
-#     AB_sums.sort()
-
-#     # CとDの全てのペアの和を計算し、K - CD_sumがAB_sumsにあるかを探す
-#     for i in range(N):
-#         for j in range(N):
-#             CD_sum = C[i] + D[j]
-#             target = K - CD_sum
-            
-#             # 二分探索でtargetがAB_sumsにあるかを確認
-#             import bisect
-#             if bisect.bisect_left(AB_sums, target) < len(AB_sums) and AB_sums[bisect.bisect_left(AB_sums, target)] == target:
-#                 return "Yes"
-    
-#     return "No"
-
-# # 入力の取得
-# N, K = map(int, input().split())
-# A = list(map(int, input().split()))
-# B = list(map(int, input().split()))
-# C = list(map(int, input().split()))
-# D = list(map(int, input().split()))
-
-# # 結果を出力
-# print(solve(N, K, A, B, C, D))
+# c = 0
+# def f():
+#     for i in range(1 << n):
+#         c = 0
+#         for j in range(n):
+#             if i & (1 << j):
+#                 c += a[j]
+#         if c == s:
+#             return "Yes"
+#     print("No")
+# print(f())
