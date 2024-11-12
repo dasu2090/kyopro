@@ -16,13 +16,13 @@ if dp[n][s]:
 else:
     print("No")
 
-for i in range(n+1):
-    for j in range(s+1):
-        if dp[i][j]:
-            print(1, end=" ")
-        else:
-            print(0, end=" ")
-    print()
+# for i in range(n+1):
+#     for j in range(s+1):
+#         if dp[i][j]:
+#             print(1, end=" ")
+#         else:
+#             print(0, end=" ")
+#     print()
 
 #---------------------
 # n, s = map(int, input().split())
