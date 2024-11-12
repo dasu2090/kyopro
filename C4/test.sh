@@ -32,3 +32,14 @@ if [[ $1 -eq 18 ]]; then
 EOF
 )| python3 ./A18.py
 fi
+
+if [[ $1 -eq 19 ]]; then
+    (cat <<EOF
+4 7
+3 13
+3 17
+5 29
+1 10
+EOF
+) | python3 ./A19.py
+fi
