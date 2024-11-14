@@ -43,3 +43,16 @@ if [[ $1 -eq 19 ]]; then
 EOF
 ) | python3 ./A19.py
 fi
+
+if [[ $1 -eq 20 ]]; then
+    (cat <<EOF
+mynavi
+monday
+EOF
+) | python3 ./A20.py
+    (cat <<EOF
+kyoto
+tokyo
+EOF
+) | python3 ./A20.py
+fi
