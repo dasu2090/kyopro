@@ -50,9 +50,23 @@ mynavi
 monday
 EOF
 ) | python3 ./A20.py
+fi
+
+if [[ $1 -eq 21 ]]; then
     (cat <<EOF
-kyoto
-tokyo
+4
+4 20
+3 30
+2 40
+1 10
 EOF
-) | python3 ./A20.py
+) | python3 ./A21.py
+    (cat <<EOF
+4
+4 2
+3 3
+2 4
+1 1
+EOF
+) | python3 ./A21.py
 fi
