@@ -70,3 +70,18 @@ EOF
 EOF
 ) | python3 ./A21.py
 fi
+
+if [[ $1 -eq 22 ]]; then
+    (cat <<EOF
+7
+2 4 4 7 6 7
+3 5 6 7 7 7
+EOF
+) | python3 ./A22.py
+    (cat <<EOF
+2
+2
+2
+EOF
+) | python3 ./A22.py
+fi
