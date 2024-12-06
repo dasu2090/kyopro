@@ -1,3 +1,14 @@
+n = int(input())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+dp = [0] * (n + 1)
+dp[2] = a[0]
+for i in range(3, n+1):
+    dp[i] = min(dp[i-1] + a[i-2], dp[i-2] + b[i-3])
+print(dp[n])
+
+#------------------------
 # n = int(input())
 # a = list(map(int, input().split()))
 # b = list(map(int, input().split()))
@@ -12,17 +23,17 @@
 
 # print(dp[n])
 #------------------------
-n = int(input())
-a = list(map(int, input().split()))
-b = list(map(int, input().split()))
+# n = int(input())
+# a = list(map(int, input().split()))
+# b = list(map(int, input().split()))
 
-dp = [0] * (n + 1)
-dp[2] = a[0]
+# dp = [0] * (n + 1)
+# dp[2] = a[0]
 
-for i in range(3, n+1):
-    dp[i] = min(dp[i-1] + a[i-2], dp[i-2] + b[i-3])
+# for i in range(3, n+1):
+#     dp[i] = min(dp[i-1] + a[i-2], dp[i-2] + b[i-3])
 
-print(dp[n])
+# print(dp[n])
 
 #---------------------------
 # n = int(input())

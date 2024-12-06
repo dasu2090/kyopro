@@ -99,3 +99,22 @@ EOF
 EOF
 ) | python3 ./A22.py
 fi
+
+if [[ $1 -eq 23 ]]; then
+    (cat <<EOF
+3 4
+0 0 1
+0 1 0
+1 0 0
+1 1 0
+EOF
+) | python3 ./A23.py
+fi
+
+if [[ $1 -eq 24 ]]; then
+    (cat <<EOF
+6
+2 3 1 6 4 5
+EOF
+) | python3 ./A24.py
+fi
