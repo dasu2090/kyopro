@@ -1,46 +1,64 @@
-MOD = 10000
+n = int(input())
+sum = 0
+while n:
+    t, a = map(str, input().split())
 
-def process_operations(operations):
-    current_value = 0
-    results = []
-    for operation in operations:
-        op, value = operation
-        value = int(value)
-        if op == '+':
-            current_value += value
-        elif op == '-':
-            current_value -= value
-        elif op == '*':
-            current_value *= value
-        current_value %= MOD
-        results.append(current_value)
-    return results
+    if t == '+':
+        sum = sum + int(a)
+    if t == '-':
+        sum = sum - int(a)
+    if t == '*':
+        sum = sum * int(a)
+    if sum < 0:
+        sum += 10000
+    sum = sum % 10000
+    print(sum)
+    n -= 1
 
-operations = [
-    ('+', 57),
-    ('+', 43),
-    ('*', 100),
-    ('-', 1)
-]
 
-results = process_operations(operations)
+# MOD = 10000
 
-for result in results:
-    print(result)
+# def process_operations(operations):
+#     current_value = 0
+#     results = []
+#     for operation in operations:
+#         op, value = operation
+#         value = int(value)
+#         if op == '+':
+#             current_value += value
+#         elif op == '-':
+#             current_value -= value
+#         elif op == '*':
+#             current_value *= value
+#         current_value %= MOD
+#         results.append(current_value)
+#     return results
+
+# operations = [
+#     ('+', 57),
+#     ('+', 43),
+#     ('*', 100),
+#     ('-', 1)
+# ]
+
+# results = process_operations(operations)
+
+# for result in results:
+#     print(result)
 
 #-------------------------------
-n = int(input())
+# n = int(input())
 
-ans = 0
-for _ in range(n):
-    t, a = map(str, input().split())
-    if t == '+':
-        ans = ans + int(a)
-    elif t == '-':
-        ans = ans - int(a)
-    elif t == '*':
-        ans = ans * int(a)
-    if ans < 0:
-        ans += 10000
-    ans %= 10000
-    print(ans)
+# ans = 0
+# for _ in range(n):
+#     t, a = map(str, input().split())
+#     if t == '+':
+#         ans = ans + int(a)
+#     elif t == '-':
+#         ans = ans - int(a)
+#     elif t == '*':
+#         ans = ans * int(a)
+#     if ans < 0:
+#         ans += 10000
+#     ans %= 10000
+#     print(ans)
