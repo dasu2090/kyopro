@@ -25,3 +25,14 @@ EOF
 EOF
 ) | python3 ./A27.py
 fi
+
+if [[ $1 -eq 28 ]]; then
+    (cat <<EOF
+4
++ 57
++ 43
+* 100
+- 1
+EOF
+) | python3 ./A28.py
+fi
