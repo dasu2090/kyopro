@@ -36,3 +36,18 @@ if [[ $1 -eq 28 ]]; then
 EOF
 ) | python3 ./A28.py
 fi
+
+if [[ $1 -eq 29 ]]; then
+    (cat <<EOF
+2 8
+EOF
+) | python3 ./A29.py
+    (cat <<EOF
+7 3
+EOF
+) | python3 ./A29.py
+    (cat <<EOF
+2 42
+EOF
+) | python3 ./A29.py
+fi
