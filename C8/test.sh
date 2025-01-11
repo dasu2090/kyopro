@@ -33,3 +33,13 @@ if [[ $1 -eq 53 ]]; then
 EOF
 ) | python3 ./A53.py
 fi
+
+if [[ $1 -eq 54 ]]; then
+    (cat <<EOF
+3
+1 tanaka 49
+1 suzuki 50
+2 tanaka
+EOF
+) | python3 ./A54.py
+fi
