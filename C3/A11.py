@@ -1,18 +1,36 @@
 n, x = map(int, input().split())
 a = list(map(int, input().split()))
 
-def f(l, r):
-    if l >= r:
-        return l
-    mid = (l + r) // 2 
-    if a[mid] < x:
-        return f(mid + 1, r)
-    if a[mid] == x:
-        return mid + 1
-    if a[mid] > x:
-        return f(l, mid)
+l = 1
+m = 0
+r = n
+while(l <= r):
+    m = (l + r) // 2
+    if x == a[m]:
+        break
+    elif a[m] < x:
+        l = m + 1
+    elif a[m] > x:
+        r = m - 1
+print(m+1)
 
-print(f(0, n - 1))
+#--------------------
+
+# n, x = map(int, input().split())
+# a = list(map(int, input().split()))
+
+# def f(l, r):
+#     if l >= r:
+#         return l
+#     mid = (l + r) // 2 
+#     if a[mid] < x:
+#         return f(mid + 1, r)
+#     if a[mid] == x:
+#         return mid + 1
+#     if a[mid] > x:
+#         return f(l, mid)
+
+# print(f(0, n - 1))
 
 
 #----------------------
