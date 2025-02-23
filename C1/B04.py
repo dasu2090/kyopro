@@ -5,6 +5,7 @@ for i in range(len(n)):
     num += 2 ** (len(n) - 1 - i) * int(n[i])
 print(num)
 
+#--------------
 # N = str(input())
 
 # binary = 0
