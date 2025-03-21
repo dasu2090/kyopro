@@ -1,22 +1,42 @@
 h, w = map(int, input().split())
-grid = [[0] * (w + 1) for _ in range(h + 1)]
+grid = [[0] * (w+1) for _ in range(h+1)]
 
-for y in range(1, h + 1):
+for y in range(1, h+1):
     tmp = list(map(int, input().split()))
-    for x in range(1, w + 1):
-        grid[y][x] += tmp[x - 1] + grid[y][x - 1]
-for y in range(2, h + 1):
-    for x in range(1, w + 1):
-        grid[y][x] += grid[y - 1][x]
+    for x in range(1, w+1):
+        grid[y][x] += tmp[x-1] + grid[y][x-1]
+for y in range(2, h+1):
+    for x in range(1, w+1):
+        grid[y][x] += grid[y-1][x]
 
 q = int(input())
 for i in range(q):
     a, b, c, d = map(int, input().split())
-    lu = grid[a - 1][b - 1]
-    ld = grid[c][b - 1]
-    ru = grid[a - 1][d]
+    lu = grid[a-1][b-1]
+    ld = grid[c][b-1]
+    ru = grid[a-1][d]
     rd = grid[c][d]
-    print(rd + lu - ld - ru)
+    print(rd+lu-ld-ru)
+
+# h, w = map(int, input().split())
+# grid = [[0] * (w + 1) for _ in range(h + 1)]
+
+# for y in range(1, h + 1):
+#     tmp = list(map(int, input().split()))
+#     for x in range(1, w + 1):
+#         grid[y][x] += tmp[x - 1] + grid[y][x - 1]
+# for y in range(2, h + 1):
+#     for x in range(1, w + 1):
+#         grid[y][x] += grid[y - 1][x]
+
+# q = int(input())
+# for i in range(q):
+#     a, b, c, d = map(int, input().split())
+#     lu = grid[a - 1][b - 1]
+#     ld = grid[c][b - 1]
+#     ru = grid[a - 1][d]
+#     rd = grid[c][d]
+#     print(rd + lu - ld - ru)
 
 
 # h, w = map(int, input().split())
